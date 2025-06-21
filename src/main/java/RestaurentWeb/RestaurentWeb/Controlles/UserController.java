@@ -31,4 +31,5 @@ public class UserController {
     public String go4(){
         return "Bookings";
     }
+  
 }
