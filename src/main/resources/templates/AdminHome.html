@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Admin Home </title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+
+        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com" rel="preconnect">
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+        <!-- Vendor CSS Files -->
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+        <!-- Main CSS File -->
+        <link href="assets/css/main.css" rel="stylesheet">
+
+        <!-- =======================================================
+        * Template Name: NiceRestaurant
+        * Template URL: https://bootstrapmade.com/nice-restaurant-bootstrap-template/
+        * Updated: Jun 06 2025 with Bootstrap v5.3.6
+        * Author: BootstrapMade.com
+        * License: https://bootstrapmade.com/license/
+        ======================================================== -->
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <style>
+            .card.bg-dark:hover {
+                transform: scale(1.03);
+                transition: transform 0.3s ease;
+                box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+            }
+        </style>
+
+    </head>
+
+    <body class="starter-page-page">
+
+        <header id="header" class="header d-flex align-items-center sticky-top">
+            <div class="container position-relative d-flex align-items-center justify-content-between">
+
+                <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+                    <!-- Uncomment the line below if you also wish to use an image logo -->
+                    <!-- <img src="assets/img/logo.webp" alt=""> -->
+                    <i class="bi bi-fork-knife"></i>
+                    <h1 class="sitename">VP Restaurant</h1>
+                </a>
+
+                <nav id="navmenu" class="navmenu">
+                    <ul>
+                        <li><a href="index" class="active">Home</a></li>
+                        <li><a href="AboutUs.html">About Us</a></li>
+                        <li><a href="Bookings">Book a Table</a></li>
+                        <li><a href="Menu.html">Menu</a></li>
+                        <li class="dropdown"><a href="UserLogin"><span>Login</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li class="dropdown"><a href="UserSignUp"><span>SignUp</span></a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><a href="Gallery.html">Gallery</a></li>
+                        <li class="dropdown"><a href="ContactUs.html"><span>Contact</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li class="dropdown"><a href="Reviews.html"><span>Reviews</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                                    <ul>
+                                        <li><a href="Blogs.html">Blogs</a></li>      
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                </nav>
+
+                <a class="btn-getstarted d-none d-sm-block" href="#book-a-table">Book a Table</a>
+            </div>
+        </header>
+
+        <main class="main">
+
+            <!-- Hero Section -->
+            <section id="hero" class="hero section">
+                <div class="container-fluid hero-container" data-aos="fade-up">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-lg-6 content-col">
+                            <div class="content-wrapper">
+                                <div class="status-badge">Reservations Open</div>
+                                <h2>Elevate Your Dining Experience</h2>
+                                <p>From sizzling starters to decadent desserts, every dish is a masterpiece designed to enchant your senses.</p>
+
+                                <div class="opening-hours" data-aos="fade-up" data-aos-delay="500">
+                                    <i class="bi bi-clock"></i>
+                                    <span>Open Daily: 11am - 10pm</span>
+                                </div>
+
+                                <div class="btn-group">
+                                    <a href="Bookings" class="btn btn-book">Book a Table</a>
+                                    <a href="#menu" class="btn btn-menu">Explore Our Menu</a>
+                                </div>
+
+                                <div class="social-links">
+                                    <a href="#"><i class="bi bi-facebook"></i></a>
+                                    <a href="#"><i class="bi bi-instagram"></i></a>
+                                    <a href="#"><i class="bi bi-twitter"></i></a>
+                                    <a href="#"><i class="bi bi-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 swiper-col">
+                            <div class="swiper hero-swiper init-swiper" data-aos="zoom-out" data-aos-delay="100">
+                                <script type="application/json" class="swiper-config">
+                                    {
+                                    "loop": true,
+                                    "speed": 800,
+                                    "autoplay": {
+                                    "delay": 5000
+                                    },
+                                    "effect": "fade",
+                                    "slidesPerView": 1,
+                                    "navigation": {
+                                    "nextEl": ".swiper-button-next",
+                                    "prevEl": ".swiper-button-prev"
+                                    }
+                                    }
+                                </script>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="img-container">
+                                            <img src="assets/img/restaurant/misc-square-1.webp" alt="Restaurant Ambience">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="img-container">
+                                            <img src="assets/img/restaurant/misc-square-2.webp" alt="Signature Dish">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="img-container">
+                                            <img src="assets/img/restaurant/misc-square-3.webp" alt="Expert Chefs">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </section><!-- /Hero Section -->
+            <br>
+            <br>
+
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Admin Dash-Board</h2>
+            </div><!-- End Section Title -->
+
+            <div class="container">
+                <div class="row mt-4 justify-content-center">
+                    <!-- Card 1 -->
+                    <div class="col-md-4 mb-4">
+                        <a href="/AdminManageChefs" class="card h-100 text-decoration-none bg-dark text-white mx-3">
+                            <img src="assets/img/restaurant/chef-1.webp" class="card-img-top" alt="Chef 1">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Manage Chefs</h5>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col-md-4 mb-4">
+                        <a href="/AdminManageMenu" class="card h-100 text-decoration-none bg-dark text-white mx-3">
+                            <img src="assets/img/restaurant/menu.jpeg" style="height:320px" class="card-img-top" alt="Chef 2">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Manage Menu</h5>
+                            </div>
+                        </a>
+                    </div>
+                    
+                     <div class="col-md-4 mb-4">
+                        <a href="/ManageMenu" class="card h-100 text-decoration-none bg-dark text-white mx-3">
+                            <img src="assets/img/restaurant/chef-1.webp" class="card-img-top" alt="Chef 2">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Manage Cities</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </main>
+
+        <footer id="footer" class="footer">
+
+            <div class="container footer-top">
+                <div class="row gy-4">
+                    <div class="col-lg-5 col-md-12 footer-about">
+                        <a href="index.html" class="logo d-flex align-items-center">
+                            <span class="sitename">VP Restaurant</span>
+                        </a>
+                        <p>Experience a flavorful journey where spices meet soul. From sizzling starters to decadent desserts, every dish is a celebration of taste and tradition.</p>
+                        <div class="social-links d-flex mt-4">
+                            <a href=""><i class="bi bi-twitter-x"></i></a>
+                            <a href=""><i class="bi bi-facebook"></i></a>
+                            <a href=""><i class="bi bi-instagram"></i></a>
+                            <a href=""><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><a href="Login">Home</a></li>
+                            <li><a href="about">About us</a></li>
+                            <li><a href="services">Services</a></li>
+                            <li><a href="tos">Terms of service</a></li>
+                            <li><a href="pp">Privacy policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><a href="#">Dine-In</a></li>
+                            <li><a href="#">Takeaway</a></li>
+                            <li><a href="#">Home Delivery</a></li>
+                            <li><a href="#">Online Reservations</a></li>
+                            <li><a href="#">Catering Services</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                        <h4>Contact Us</h4>
+                        <p>Azad Nagar Street</p>
+                        <p>Punjab, PB 143001</p>
+                        <p>India</p>
+                        <p class="mt-4"><strong>Phone:</strong> <span>+91 988-955-4885</span></p>
+                        <p><strong>Email:</strong> <span>gauravon16@example.com</span></p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container copyright text-center mt-4">
+                <p>© <span>Copyright</span> <strong class="px-1 sitename">VP Restaurant</strong> <span>All Rights Reserved</span></p>
+                <div class="credits">
+                    <!-- All the links in the footer should remain intact. -->
+                    <!-- You can delete the links only if you've purchased the pro version. -->
+                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                    <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+                    Designed by <a href="login">Gaurav</a>
+                </div>
+            </div>
+
+        </footer>
+
+        <!-- Scroll Top -->
+        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+        <!-- Preloader -->
+        <div id="preloader"></div>
+
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+        <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+        <!-- Main JS File -->
+        <script src="assets/js/main.js"></script>
+
+    </body>
+
+</html>

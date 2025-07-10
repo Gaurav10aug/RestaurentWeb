@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Menu Page </title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+
+        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com" rel="preconnect">
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+        <!-- Vendor CSS Files -->
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+        <!-- Main CSS File -->
+        <link href="assets/css/main.css" rel="stylesheet">
+
+        <!-- =======================================================
+        * Template Name: NiceRestaurant
+        * Template URL: https://bootstrapmade.com/nice-restaurant-bootstrap-template/
+        * Updated: Jun 06 2025 with Bootstrap v5.3.6
+        * Author: BootstrapMade.com
+        * License: https://bootstrapmade.com/license/
+        ======================================================== -->
+    </head>
+
+    <body class="starter-page-page">
+
+        <header id="header" class="header d-flex align-items-center sticky-top">
+            <div class="container position-relative d-flex align-items-center justify-content-between">
+
+                <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+                    <!-- Uncomment the line below if you also wish to use an image logo -->
+                    <!-- <img src="assets/img/logo.webp" alt=""> -->
+                    <i class="bi bi-fork-knife"></i>
+                    <h1 class="sitename">VP Restaurant</h1>
+                </a>
+                <nav id="navmenu" class="navmenu">
+                    <ul>
+                        <li><a href="index" class="active">Home</a></li>
+                        <li><a href="AboutUs.html">About Us</a></li>
+                        <li><a href="Bookings">Book a Table</a></li>
+                        <li><a href="Menu.html">Menu</a></li>
+                        <li class="dropdown"><a href="UserLogin"><span>Login</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li class="dropdown"><a href="UserSignUp"><span>SignUp</span></a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><a href="Gallery.html">Gallery</a></li>
+                        <li class="dropdown"><a href="ContactUs.html"><span>Contact</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li class="dropdown"><a href="Reviews.html"><span>Reviews</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                                    <ul>
+                                        <li><a href="Blogs.html">Blogs</a></li>      
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                </nav>
+
+                <a class="btn-getstarted d-none d-sm-block" href="Bookings">Book a Table</a>
+            </div>
+        </header>
+
+        <main class="main">
+            <!-- Menu Section -->
+            <section id="menu" class="menu section">
+
+                <!-- Section Title -->
+                <div class="container section-title" data-aos="fade-up">
+                    <h2>Menu</h2>
+                    <p>Embark on a flavorful journey across India, Italy, and China — crafted with tradition and passion in every dish.</p>
+                </div><!-- End Section Title -->
+
+                <div class="container" data-aos="fade-up">
+
+                    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+                        <div class="menu-filters isotope-filters mb-5">
+                            <ul>
+                                <li data-filter="*" class="filter-active">All</li>
+                                <li data-filter=".filter-starters">Starters</li>
+                                <li data-filter=".filter-main">Main Courses</li>
+                                <li data-filter=".filter-dessert">Desserts</li>
+                                <li data-filter=".filter-drinks">Drinks</li>
+                            </ul>
+                        </div>
+
+                        <div class="menu-container isotope-container row gy-4">
+
+                            <div class="col-lg-6 isotope-item filter-starters">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/achari-paneer_tikka.jpeg" alt="Achari Paneer Tikka" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Achari Paneer Tikka <span class="menu-tag">Indian</span></h5>
+                                        <p>Spiced paneer grilled to perfection.</p>
+                                        <div class="price">Rs 450</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-starters">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/chilli_paneer.jpeg" alt="Chili Paneer" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Chili Paneer <span class="menu-tag">Chinese</span></h5>
+                                        <p>Paneer cubes tossed in spicy chili sauce.</p>
+                                        <div class="price">Rs 360</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-starters">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/stuffed_capsicum.jpeg" alt="Stuffed Capsicum" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Stuffed Capsicum <span class="menu-tag">Indian</span></h5>
+                                        <p>Capsicums filled with spicy mashed potato.</p>
+                                        <div class="price">Rs 300</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-starters">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/tandorri_momos.jpeg" alt="Tandoori Momos" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Tandoori Momos <span class="menu-tag">Fusion</span></h5>
+                                        <p>Smoky momos in spicy marinade.</p>
+                                        <div class="price">Rs 280</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-starters">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/hara_bhara_kabab.jpeg" alt="Hara Bhara Kabab" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Hara Bhara Kabab <span class="menu-tag">Indian</span></h5>
+                                        <p>Spinach and peas cutlets shallow-fried.</p>
+                                        <div class="price">Rs 250</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-starters">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/crispy_corn.jpeg" alt="Crispy Corn" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Crispy Corn <span class="menu-tag">Chinese</span></h5>
+                                        <p>Golden-fried corn with herbs.</p>
+                                        <div class="price">Rs 270</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-starters">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/cheese_balls.jpeg" alt="Cheese Balls" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Cheese Balls <span class="menu-tag">Continental</span></h5>
+                                        <p>Cheesy delights fried until golden.</p>
+                                        <div class="price">Rs 310</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-starters">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/veg_seekh_kebab.jpeg" alt="Veg Seekh Kebab" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Veg Seekh Kebab <span class="menu-tag">Indian</span></h5>
+                                        <p>Spiced veg mix skewered and grilled.</p>
+                                        <div class="price">Rs 320</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-starters">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/veg_manchurian.jpeg" alt="Veg Manchurian" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Veg Manchurian <span class="menu-tag">Chinese</span></h5>
+                                        <p>Deep-fried veggie balls in tangy soy-garlic sauce.</p>
+                                        <div class="price">Rs 320</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-starters">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/alloo_chaat.jpeg" alt="Aloo Chaat" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Aloo Chaat <span class="menu-tag">Indian</span></h5>
+                                        <p>Tangy and spicy potato cubes.</p>
+                                        <div class="price">Rs 180</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-main">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/butter_chicken.jpeg" alt="Butter Chicken" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Butter Chicken <span class="menu-tag">Indian</span></h5>
+                                        <p>Chicken in rich tomato cream gravy.</p>
+                                        <div class="price">Rs 550</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-main">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/paneer_butter_masala.jpeg" alt="Paneer Butter Masala" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Paneer Butter Masala <span class="menu-tag">Indian</span></h5>
+                                        <p>Paneer cubes in buttery tomato gravy.</p>
+                                        <div class="price">Rs 480</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-main">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/chicken_biryani.jpeg" alt="Chicken Biryani" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Chicken Biryani <span class="menu-tag">Indian</span></h5>
+                                        <p>Spiced layered rice with chicken.</p>
+                                        <div class="price">Rs 600</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-main">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/veg_biryani.jpeg" alt="Veg Biryani" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Veg Biryani <span class="menu-tag">Indian</span></h5>
+                                        <p>Aromatic rice with vegetables and spices.</p>
+                                        <div class="price">Rs 500</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-main">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/shahi_paneer.jpeg" alt="Shahi Paneer" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Shahi Paneer <span class="menu-tag">Indian</span></h5>
+                                        <p>Paneer in royal creamy gravy.</p>
+                                        <div class="price">Rs 520</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-main">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/dal_makhani.jpeg" alt="Dal Makhani" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Dal Makhani <span class="menu-tag">Indian</span></h5>
+                                        <p>Slow-cooked black lentils in butter.</p>
+                                        <div class="price">Rs 300</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-main">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/egg_curry.jpeg" alt="Egg Curry" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Egg Curry <span class="menu-tag">Indian</span></h5>
+                                        <p>Boiled eggs in spicy onion-tomato curry.</p>
+                                        <div class="price">Rs 350</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-main">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/chana_masala.jpeg" alt="Chana Masala" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Chana Masala <span class="menu-tag">Indian</span></h5>
+                                        <p>Spicy chickpeas in thick gravy.</p>
+                                        <div class="price">Rs 320</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-main">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/stuffed_paratha.jpeg" alt="Stuffed Paratha Platter" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Stuffed Paratha Platter <span class="menu-tag">Indian</span></h5>
+                                        <p>Assorted stuffed parathas with chutney.</p>
+                                        <div class="price">Rs 280</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-main">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/grilled_chicken_steak.jpeg" alt="Grilled Chicken Steak" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Grilled Chicken Steak <span class="menu-tag">Continental</span></h5>
+                                        <p>Juicy steak with pepper sauce and veggies.</p>
+                                        <div class="price">Rs 620</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-dessert">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/gulab_jamun.jpeg" alt="Gulab Jamun" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Gulab Jamun <span class="menu-tag">Indian</span></h5>
+                                        <p>Soft milk balls soaked in sugar syrup.</p>
+                                        <div class="price">Rs 100</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-dessert">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/tiramisu.jpeg" alt="Tiramisu" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Tiramisu <span class="menu-tag">Italian</span></h5>
+                                        <p>Layered dessert with mascarpone and coffee.</p>
+                                        <div class="price">Rs 400</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-dessert">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/rasmalai.jpeg" alt="Rasmalai" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Rasmalai <span class="menu-tag">Indian</span></h5>
+                                        <p>Soft cheese patties in saffron milk.</p>
+                                        <div class="price">Rs 120</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-dessert">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/chocolate_brownie.jpeg" alt="Chocolate Brownie" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Chocolate Brownie <span class="menu-tag">Continental</span></h5>
+                                        <p>Rich and dense chocolate cake square.</p>
+                                        <div class="price">Rs 150</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-dessert">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/carrot_halwa.jpeg" alt="Carrot Halwa" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Carrot Halwa <span class="menu-tag">Indian</span></h5>
+                                        <p>Sweetened grated carrots cooked in milk.</p>
+                                        <div class="price">Rs 130</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-dessert">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/ice_cream_sundae.jpeg" alt="Ice Cream Sundae" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Ice Cream Sundae <span class="menu-tag">Continental</span></h5>
+                                        <p>Vanilla ice cream with toppings and sauces.</p>
+                                        <div class="price">Rs 160</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-dessert">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/rabri_malpua.jpeg" alt="Rabri Malpua" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Rabri Malpua <span class="menu-tag">Indian</span></h5>
+                                        <p>Syrupy pancakes topped with thick rabri.</p>
+                                        <div class="price">Rs 180</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-dessert">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/choco_lava_cake.jpeg" alt="Choco Lava Cake" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Choco Lava Cake <span class="menu-tag">Continental</span></h5>
+                                        <p>Warm chocolate cake with gooey center.</p>
+                                        <div class="price">Rs 190</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-dessert">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/kheer.jpeg" alt="Kheer" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Kheer <span class="menu-tag">Indian</span></h5>
+                                        <p>Traditional rice pudding flavored with cardamom.</p>
+                                        <div class="price">Rs 100</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-dessert">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/dry_fruit_roll.jpeg" alt="Dry Fruit Roll" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Dry Fruit Roll <span class="menu-tag">Indian</span></h5>
+                                        <p>Sweet rolls loaded with dry fruits and nuts.</p>
+                                        <div class="price">Rs 220</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-drinks">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/mango_lassi.jpeg" alt="Mango Lassi" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Mango Lassi <span class="menu-tag">Indian</span></h5>
+                                        <p>Refreshing yogurt-based mango drink.</p>
+                                        <div class="price">Rs 120</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-drinks">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/lemon_iced_tea.jpeg" alt="Lemon Iced Tea" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Lemon Iced Tea <span class="menu-tag">Chilled</span></h5>
+                                        <p>Cool lemon tea with a minty twist.</p>
+                                        <div class="price">Rs 100</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-drinks">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/cold_coffee.jpeg" alt="Cold Coffee" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Cold Coffee <span class="menu-tag">Cafe</span></h5>
+                                        <p>Chilled blend of coffee and milk.</p>
+                                        <div class="price">Rs 140</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-drinks">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/mint_mojito.jpeg" alt="Mint Mojito" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Mint Mojito <span class="menu-tag">Mocktail</span></h5>
+                                        <p>Mint and lime fizz with soda and ice.</p>
+                                        <div class="price">Rs 130</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-drinks">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/masala_chaas.jpeg" alt="Masala Chaas" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Masala Chaas <span class="menu-tag">Indian</span></h5>
+                                        <p>Spiced buttermilk with fresh herbs.</p>
+                                        <div class="price">Rs 60</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-drinks">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/thandai.jpeg" alt="Thandai" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Thandai <span class="menu-tag">Indian</span></h5>
+                                        <p>Cooling milk drink with saffron and almonds.</p>
+                                        <div class="price">Rs 160</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-drinks">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/lime_soda.jpeg" alt="Fresh Lime Soda" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Fresh Lime Soda <span class="menu-tag">Chilled</span></h5>
+                                        <p>Sweet or salted fizzy lime cooler.</p>
+                                        <div class="price">Rs 80</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-drinks">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/chocolate_shake.jpeg" alt="Chocolate Shake" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Chocolate Shake <span class="menu-tag">Cafe</span></h5>
+                                        <p>Thick and creamy chocolate milkshake.</p>
+                                        <div class="price">Rs 150</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-drinks">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/coconut_water.jpeg" alt="Coconut Water" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Coconut Water <span class="menu-tag">Fresh</span></h5>
+                                        <p>Pure and refreshing natural drink.</p>
+                                        <div class="price">Rs 60</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 isotope-item filter-drinks">
+                                <div class="menu-item d-flex align-items-center gap-4">
+                                    <img src="assets/img/restaurant/jaljeera.jpeg" alt="Jaljeera" class="menu-img img-fluid rounded-3">
+                                    <div class="menu-content">
+                                        <h5>Jaljeera <span class="menu-tag">Indian</span></h5>
+                                        <p>Spicy and tangy cumin-flavored cooler.</p>
+                                        <div class="price">Rs 70</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Download Menu Button -->
+                        <div class="text-center mt-5" data-aos="fade-up">
+                            <a href="#" class="download-menu">
+                                <i class="bi bi-file-earmark-pdf"></i> Download Full Menu
+                            </a>
+                        </div>
+                        </main>
+
+                        <footer id="footer" class="footer">
+
+                            <div class="container footer-top">
+                                <div class="row gy-4">
+                                    <div class="col-lg-5 col-md-12 footer-about">
+                                        <a href="index.html" class="logo d-flex align-items-center">
+                                            <span class="sitename">VP Restaurant</span>
+                                        </a>
+                                        <p>Experience a flavorful journey where spices meet soul. From sizzling starters to decadent desserts, every dish is a celebration of taste and tradition.</p>
+                                        <div class="social-links d-flex mt-4">
+                                            <a href=""><i class="bi bi-twitter-x"></i></a>
+                                            <a href=""><i class="bi bi-facebook"></i></a>
+                                            <a href=""><i class="bi bi-instagram"></i></a>
+                                            <a href=""><i class="bi bi-linkedin"></i></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 col-6 footer-links">
+                                        <h4>Useful Links</h4>
+                                        <ul>
+                                            <li><a href="Login">Home</a></li>
+                                            <li><a href="about">About us</a></li>
+                                            <li><a href="services">Services</a></li>
+                                            <li><a href="tos">Terms of service</a></li>
+                                            <li><a href="pp">Privacy policy</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-lg-2 col-6 footer-links">
+                                        <h4>Our Services</h4>
+                                        <ul>
+                                            <li><a href="#">Dine-In</a></li>
+                                            <li><a href="#">Takeaway</a></li>
+                                            <li><a href="#">Home Delivery</a></li>
+                                            <li><a href="#">Online Reservations</a></li>
+                                            <li><a href="#">Catering Services</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                                        <h4>Contact Us</h4>
+                                        <p>Azad Nagar Street</p>
+                                        <p>Punjab, PB 143001</p>
+                                        <p>India</p>
+                                        <p class="mt-4"><strong>Phone:</strong> <span>+91 988-955-4885</span></p>
+                                        <p><strong>Email:</strong> <span>gauravon16@example.com</span></p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="container copyright text-center mt-4">
+                                <p>© <span>Copyright</span> <strong class="px-1 sitename">VP Restaurant</strong> <span>All Rights Reserved</span></p>
+                                <div class="credits">
+                                    <!-- All the links in the footer should remain intact. -->
+                                    <!-- You can delete the links only if you've purchased the pro version. -->
+                                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                                    <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+                                    Designed by <a href="login">Gaurav</a>
+                                </div>
+                            </div>
+
+                        </footer>
+
+                        <!-- Scroll Top -->
+                        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+                        <!-- Preloader -->
+                        <div id="preloader"></div>
+
+                        <!-- Vendor JS Files -->
+                        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                        <script src="assets/vendor/php-email-form/validate.js"></script>
+                        <script src="assets/vendor/aos/aos.js"></script>
+                        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+                        <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+                        <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+                        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+                        <!-- Main JS File -->
+                        <script src="assets/js/main.js"></script>
+
+                        </body>
+
+                        </html>

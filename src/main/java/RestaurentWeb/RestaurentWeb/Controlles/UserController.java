@@ -16,12 +16,7 @@ public class UserController {
     public String go1(){
         return "UserLogin";
     }
-    
-    @GetMapping("/AdminLogin")
-    public String go2(){
-        return "AdminLogin";
-    }
-    
+        
     @GetMapping("/UserSignUp")
     public String go3(){
         return "UserSignUp";

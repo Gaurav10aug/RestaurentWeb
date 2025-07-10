@@ -25,6 +25,7 @@
 
         <!-- Main CSS File -->
         <link href="assets/css/main.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <!-- =======================================================
         * Template Name: NiceRestaurant
@@ -33,6 +34,61 @@
         * Author: BootstrapMade.com
         * License: https://bootstrapmade.com/license/
         ======================================================== -->
+        <script>
+            function userlogincreds() {
+                var email = document.getElementById("email").value;
+                var pass = document.getElementById("password").value;
+                var termsChecked = document.querySelector('input[name="agree"]').checked;
+
+                if (!email || !pass) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Missing Fields',
+                        text: 'Please fill all the fields.'
+                    });
+                    return;
+                }
+
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Invalid Email',
+                        text: 'Please enter a valid email address.'
+                    });
+                    return;
+                }
+
+                if (!termsChecked) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Terms Not Accepted',
+                        text: 'You must agree to the Terms & Policy before logging in.'
+                    });
+                    return;
+                }
+
+                var formdata = new FormData();
+                formdata.append("email", email);
+                formdata.append("password", pass);
+
+                fetch("/Userlogin", {method: "POST", body: formdata})
+                        .then(response => response.text())
+                        .then(ans => renderHTML(ans));
+
+                function renderHTML(ans) {
+                    console.log(ans);
+                    if (ans === "success") {
+                        Swal.fire("Login Success", "", "success").then(() => {
+                            window.location.href = "/index";
+                        });
+                    } else {
+                        Swal.fire("Login Failed", "Invalid credentials", "error");
+                    }
+                }
+            }
+        </script>
+
     </head>
 
     <body class="starter-page-page">
@@ -46,26 +102,27 @@
                     <i class="bi bi-fork-knife"></i>
                     <h1 class="sitename">VP Restaurant</h1>
                 </a>
-                <nav id="navmenu" class="navmenu">
+                 <nav id="navmenu" class="navmenu">
                     <ul>
                         <li><a href="index" class="active">Home</a></li>
                         <li><a href="AboutUs.html">About Us</a></li>
                         <li><a href="Bookings">Book a Table</a></li>
-                        <li><a href="ContactUs.html">Contact</a></li>
-                        <li><a href="UserLogin">Login</a></li>
-                        <li><a href="events">Events</a></li>
-                        <li><a href="gallery">Gallery</a></li>
-                        <li class="dropdown"><a href="login"><span>Menu</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <li><a href="Menu.html">Menu</a></li>
+                        <li class="dropdown"><a href="UserLogin"><span>Login</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                             <ul>
-                                <li><a href="register">Starters</a></li>
-                                <li class="dropdown"><a href="signup"><span>Main-Course</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                                <li class="dropdown"><a href="UserSignUp"><span>SignUp</span></a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><a href="Gallery.html">Gallery</a></li>
+                        <li class="dropdown"><a href="ContactUs.html"><span>Contact</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li class="dropdown"><a href="Reviews.html"><span>Reviews</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                                     <ul>
-                                        <li><a href="#">Deserts</a></li>
-                                        <li><a href="#">Drinks</a></li>
+                                        <li><a href="Blogs.html">Blogs</a></li>      
                                     </ul>
                                 </li>
-                                <li><a href="#">Review</a></li>
-                                <li><a href="#">Blogs</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -78,137 +135,159 @@
         <br>
         <br>
         <br>
-        <br>
-        <br>
-        <br>
-
         <main class="main">
-        <section id="contact" class="contact section">
-            <!-- Login Form Section (Overlapping) -->
-            <div class="container form-container-overlap">
-                <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
-                    <div class="col-lg-8">
-                        <div class="contact-form-wrapper">
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                          <h2 class="text-center mb-4">User Login</h2>
-                           
-                            <form action="forms/contact.php" method="post" class="php-email-form">
-                                <div class="row g-3">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <div class="input-with-icon">
-                                                <i class="bi bi-envelope"></i>
-                                                <input type="email" class="form-control" name="email" placeholder="Email Address" required="">
-                                            </div>
-                                        </div>
-                                    </div>
+            <section id="contact" class="contact section">
+                <!-- Login Form Section (Overlapping) -->
+                <div class="container form-container-overlap">
+                    <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="col-lg-8">
+                            <div class="contact-form-wrapper">
+                                <br><br><br><br>
+                                <h2 class="text-center mb-4">User Login</h2>
 
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <div class="input-with-icon">
-<!--                                                <i class="bi bi-text-left"></i>-->
-                                                <input type="password" class="form-control" name="Password" placeholder="Password" required="">
+<!--                                <form action="forms/contact.php" method="post" class="php-email-form">-->
+                                <form id="loginForm" class="php-email-form" onsubmit="return false;">
+                                    <div class="row g-3">
+
+                                        <!-- Email -->
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="input-with-icon">
+                                                    <i class="bi bi-envelope"></i>
+                                                    <input type="email" id="email" class="form-control" name="email" placeholder="Email Address" required>
+                                                </div>
                                             </div>
                                         </div>
+
+                                        <!-- Password -->
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="input-with-icon">
+                                                    <i class="bi bi-lock"></i>
+                                                    <input type="password" id="password" class="form-control" name="Password" placeholder="Password" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Terms and Conditions -->
+                                        <div class="col-md-12">
+                                            <div class="form-group form-check">
+                                                <input type="checkbox" class="form-check-input" name="agree" id="agree">
+                                                <label class="form-check-label" for="agree">
+                                                    I agree to the <a href="#">Terms & Policy</a>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <!-- Submit Button -->
+                                        <div class="col-lg-12 text-center">
+                                                <button type="button" onclick="userlogincreds()" class="btn btn-primary btn-submit">Login</button>
+
+                                        </div>
+
+                                        <!-- OR separator -->
+                                        <div class="col-md-12 text-center">
+                                            <hr>
+                                            <p class="mb-1">or</p>
+                                        </div>
+
+                                        <!-- Social Buttons -->
+                                        <div class="col-md-12 text-center">
+                                            <button type="button" class="btn btn-danger me-2"><i class="bi bi-google"></i> Login with Google</button>
+                                            <button type="button" class="btn btn-primary"><i class="bi bi-facebook"></i> Login with Facebook</button>
+                                        </div>
                                     </div>
-                                    
-                                    <div class="col-md-8 text-center">
-                                        <button type="submit" class="btn btn-primary btn-submit">Login</button>
-                                    </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section><!-- /Contact Section -->
-    </main>
 
-    <footer id="footer" class="footer">
+            </section><!-- /Contact Section -->
+        </main>
 
-        <div class="container footer-top">
-            <div class="row gy-4">
-                <div class="col-lg-5 col-md-12 footer-about">
-                    <a href="index.html" class="logo d-flex align-items-center">
-                        <span class="sitename">VP Restaurant</span>
-                    </a>
-                    <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
-                    <div class="social-links d-flex mt-4">
-                        <a href=""><i class="bi bi-twitter-x"></i></a>
-                        <a href=""><i class="bi bi-facebook"></i></a>
-                        <a href=""><i class="bi bi-instagram"></i></a>
-                        <a href=""><i class="bi bi-linkedin"></i></a>
+        <footer id="footer" class="footer">
+
+            <div class="container footer-top">
+                <div class="row gy-4">
+                    <div class="col-lg-5 col-md-12 footer-about">
+                        <a href="index.html" class="logo d-flex align-items-center">
+                            <span class="sitename">VP Restaurant</span>
+                        </a>
+                        <p>Experience a flavorful journey where spices meet soul. From sizzling starters to decadent desserts, every dish is a celebration of taste and tradition.</p>
+                        <div class="social-links d-flex mt-4">
+                            <a href=""><i class="bi bi-twitter-x"></i></a>
+                            <a href=""><i class="bi bi-facebook"></i></a>
+                            <a href=""><i class="bi bi-instagram"></i></a>
+                            <a href=""><i class="bi bi-linkedin"></i></a>
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-lg-2 col-6 footer-links">
-                    <h4>Useful Links</h4>
-                    <ul>
-                        <li><a href="Login">Home</a></li>
-                        <li><a href="about">About us</a></li>
-                        <li><a href="services">Services</a></li>
-                        <li><a href="tos">Terms of service</a></li>
-                        <li><a href="pp">Privacy policy</a></li>
-                    </ul>
-                </div>
+                    <div class="col-lg-2 col-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><a href="Login">Home</a></li>
+                            <li><a href="about">About us</a></li>
+                            <li><a href="services">Services</a></li>
+                            <li><a href="tos">Terms of service</a></li>
+                            <li><a href="pp">Privacy policy</a></li>
+                        </ul>
+                    </div>
 
-                <div class="col-lg-2 col-6 footer-links">
-                    <h4>Our Services</h4>
-                    <ul>
-                        <li><a href="#">Web Design</a></li>
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">Product Management</a></li>
-                        <li><a href="#">Marketing</a></li>
-                        <li><a href="#">Graphic Design</a></li>
-                    </ul>
-                </div>
+                    <div class="col-lg-2 col-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><a href="#">Dine-In</a></li>
+                            <li><a href="#">Takeaway</a></li>
+                            <li><a href="#">Home Delivery</a></li>
+                            <li><a href="#">Online Reservations</a></li>
+                            <li><a href="#">Catering Services</a></li>
+                        </ul>
+                    </div>
 
-                <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-                    <h4>Contact Us</h4>
-                    <p>Azad Nagar Street</p>
-                    <p>Punjab, PB 143001</p>
-                    <p>India</p>
-                    <p class="mt-4"><strong>Phone:</strong> <span>+91 988-955-4885</span></p>
-                    <p><strong>Email:</strong> <span>gauravon16@example.com</span></p>
-                </div>
+                    <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                        <h4>Contact Us</h4>
+                        <p>Azad Nagar Street</p>
+                        <p>Punjab, PB 143001</p>
+                        <p>India</p>
+                        <p class="mt-4"><strong>Phone:</strong> <span>+91 988-955-4885</span></p>
+                        <p><strong>Email:</strong> <span>gauravon16@example.com</span></p>
+                    </div>
 
+                </div>
             </div>
-        </div>
 
-        <div class="container copyright text-center mt-4">
-            <p>© <span>Copyright</span> <strong class="px-1 sitename">VP Restaurant</strong> <span>All Rights Reserved</span></p>
-            <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you've purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-                Designed by <a href="login">Gaurav</a>
+            <div class="container copyright text-center mt-4">
+                <p>© <span>Copyright</span> <strong class="px-1 sitename">VP Restaurant</strong> <span>All Rights Reserved</span></p>
+                <div class="credits">
+                    <!-- All the links in the footer should remain intact. -->
+                    <!-- You can delete the links only if you've purchased the pro version. -->
+                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                    <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+                    Designed by <a href="login">Gaurav</a>
+                </div>
             </div>
-        </div>
 
-    </footer>
+        </footer>
 
-    <!-- Scroll Top -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        <!-- Scroll Top -->
+        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-    <!-- Preloader -->
-    <div id="preloader"></div>
+        <!-- Preloader -->
+        <div id="preloader"></div>
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+        <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
-    <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
+        <!-- Main JS File -->
+        <script src="assets/js/main.js"></script>
 
-</body>
+    </body>
 
 </html>
